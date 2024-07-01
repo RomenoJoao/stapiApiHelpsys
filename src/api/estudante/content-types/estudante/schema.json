@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estudantes",
+  "info": {
+    "singularName": "estudante",
+    "pluralName": "estudantes",
+    "displayName": "estudante",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "matricula": {
+      "type": "biginteger",
+      "required": true
+    },
+    "sexo": {
+      "type": "boolean",
+      "required": true
+    },
+    "idade": {
+      "type": "integer",
+      "required": true
+    },
+    "anoCurricular": {
+      "type": "integer",
+      "required": true
+    },
+    "curso": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::curso.curso",
+      "inversedBy": "estudantes"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

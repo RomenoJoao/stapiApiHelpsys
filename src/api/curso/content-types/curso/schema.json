@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cursos",
+  "info": {
+    "singularName": "curso",
+    "pluralName": "cursos",
+    "displayName": "Curso",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "estudantes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::estudante.estudante",
+      "mappedBy": "curso"
+    },
+    "coordenador": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::coordenador.coordenador",
+      "inversedBy": "curso"
+    }
+  }
+}

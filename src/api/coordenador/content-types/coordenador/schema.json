@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coordenadors",
+  "info": {
+    "singularName": "coordenador",
+    "pluralName": "coordenadors",
+    "displayName": "Coordenador",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "numeroI": {
+      "type": "integer",
+      "required": true
+    },
+    "curso": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::curso.curso",
+      "mappedBy": "coordenador"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
